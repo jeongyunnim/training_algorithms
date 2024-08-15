@@ -1,0 +1,6 @@
+#ifndef BARKING_DOG_LIBRARY_H
+#define BARKING_DOG_LIBRARY_H
+
+void hello();
+
+#endif //BARKING_DOG_LIBRARY_H
