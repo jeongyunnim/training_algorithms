@@ -198,5 +198,7 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-**/a.out**
+**/a.out
+**/.DS_Store
+**/a.out.dSYM/
 # End of https://www.toptal.com/developers/gitignore/api/macos,c++,clion,cmake
