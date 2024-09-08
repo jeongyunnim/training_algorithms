@@ -77,6 +77,11 @@ bool check_adj_four(int x, int y) {
 }
 
 void find_puyo() {
+    // 1. 아랫줄 부터 뿌요 탐색
+    // 2. 연결된 뿌요 개수 확인
+    // 3. 4개 이상이라면 모두 비움
+    // 4. 위에 있는 뿌요 내림
+    // 5. i, j 초기화 후 1번으로 반복
     bool pop_flag = true;
     while (pop_flag) {
         pop_flag = false;
