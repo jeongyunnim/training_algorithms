@@ -11,25 +11,10 @@ using namespace std;
 
 int N, M, H, ans = 0x7f7f7f7f;
 int board[31][11];
-int visited[31][11];
-int dx[4] = {0, 0,0};
-int dy[4] = {1, 0, -1};
-
-void print_board() {
-    cout << "[board]\n";
-    for (int i = 0; i < H; ++i) {
-        for (int j = 0; j < N; ++j) {
-            cout << board[i][j] << ' ';
-        }
-        cout << '\n';
-    }
-}
 
 bool is_match() {
     // 세로 축 확인
     // 마지막 값도 확인해야 함
-//    print_board();
-
     int x, y, pointer;
     for (y = 0; y < N; ++y) {
         pointer = y;
@@ -55,7 +40,6 @@ bool is_match() {
                 }
             }
         }
-//        cout << "세로축: " << y << " -- " << pointer << '\n';
         if (y != pointer)
             return false;
     }
@@ -80,6 +64,7 @@ void recursive_find(int n) {
             board[i][j] = true;
             recursive_find(n + 1);
             board[i][j] = false;
+            // 인접한 축과 연결되지 않아 영향을 안 받으면 결과 값이 변하지 않으므로 패스
             while (i < H) {
                 if ((j > 0 && board[i][j - 1]) || (j < N - 1 && board[i][j + 1]))
                     break ;
