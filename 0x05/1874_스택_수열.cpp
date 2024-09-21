@@ -18,7 +18,7 @@ void concat(char c) {
 
 int main() {
 
-    int n, x, index = 0, count = 0;
+    int n, x, index = 0;
     ios::sync_with_stdio(0);
     cin.tie(0);
 
@@ -33,7 +33,7 @@ int main() {
             }
             concat('-');
             S.pop();
-        } else if (S.empty() || S.top() != x) {
+        } else if (S.top() != x) {
             cout << "NO";
             return 0;
         } else {

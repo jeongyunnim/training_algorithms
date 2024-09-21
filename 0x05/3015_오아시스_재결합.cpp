@@ -37,15 +37,16 @@ int main() {
         }
 
         // top과 같은 값일 때 연속된 값을 모두 볼 수 있으므로 += top.second
-        // 해당 값보다 큰 값이 스택에 있다면 += 1
         if (!S.empty() &&S.top().first == input[i]) {
             cnt += S.top().second;
             S.top().second += 1;
+            // 해당 값보다 큰 값이 스택에 있다면 += 1
             if (S.size() > 1)
                 cnt += 1;
             continue ;
-        } else if (!S.empty()) {
-            // 지금 값이 제일 큰 값이 아니라면 cnt += 1
+        }
+        // 현재 값이 제일 큰 값이 아니라면 cnt += 1
+        else if (!S.empty()) {
             cnt += 1;
         }
         // 현재 값 push
