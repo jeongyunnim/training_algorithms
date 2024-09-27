@@ -8,7 +8,7 @@ enum{T, P};
 
 int N, mx;
 int counsel[1500001][2];
-int choice[1500001];
+int selectable[1500001];
 
 int main() {
     ios::sync_with_stdio(0);
@@ -21,14 +21,14 @@ int main() {
     for (int day = 1; day <= N; ++day) {
         int potential = day + counsel[day][T] - 1;
         // 현재 선택할 수 있는 값 중 가장 큰 값을 가져온다.
-        // choice에서 유효한 값이 10 밖에 없는 경우
+        // selectable에서 유효한 값이 10 밖에 없는 경우
         // {10, 0, 0, 0, 0, 0, 0} 이 예상되는 경우 {10, 10, 10, 10, 10 ...} 으로 초기화 해주며 진행
-        if (choice[day] < choice[day - 1])
-            choice[day] = choice[day - 1];
+        if (selectable[day] < selectable[day - 1])
+            selectable[day] = selectable[day - 1];
         // 현재 선택할 수 있는 값 중 가장 높은 값을 더한다.
         // 오늘 상담 선택할 시 받는 기댓값과 이미 이전 날짜에 의해 초기화 되어있는 값과 비교한다.
-        if (potential < N + 1 && choice[potential] < choice[day - 1] + counsel[day][P])
-            choice[potential] = choice[day - 1] + counsel[day][P];
+        if (potential < N + 1 && selectable[potential] < selectable[day - 1] + counsel[day][P])
+            selectable[potential] = selectable[day - 1] + counsel[day][P];
     }
-    cout << choice[N];
+    cout << selectable[N];
 }
