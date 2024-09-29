@@ -50,7 +50,7 @@ int main() {
 //    }
 //    cout << "나무 2" << '\n';
 //    for (int mv = 1;  mv <= W + 1; ++mv) {
-//        for (int i = 1; i <= T; ++i) {
+//        for (int i = 1; i <= T; ++i) 
 //            cout << dp[2][i][mv] << ' ';
 //        }
 //        cout << '\n';
