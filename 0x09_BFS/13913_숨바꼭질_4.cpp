@@ -6,8 +6,8 @@
 using namespace std;
 int visited[200001][2];
 vector<int> ans;
-int dx[2] = {-1, 1};
 queue<int> Q;
+int dx[2] = {-1, 1};
 int main() {
 
     int N, K;
@@ -51,7 +51,7 @@ int main() {
         if (visited[K][0])
             break ;
     }
-    cout << visited[K][0] - 1<< '\n';
+    cout << visited[K][0] - 1 << '\n'; // 현 위치를 1부터 시작하기 때문에 -1을 해주어야 했다.
     for (int i = K; i >= 0; i = visited[i][1]) {
         ans.push_back(i);
     }
