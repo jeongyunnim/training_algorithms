@@ -40,6 +40,5 @@ int main() {
             cin >> num;
             problems.erase(problems.find({problems_i[num], num}));
         }
-
     }
 }
