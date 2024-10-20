@@ -36,7 +36,7 @@ int main() {
 
     sort(vil, vil + M, compare);
 
-    int mx = 0, cap;
+    int mx = 0;
     for (int i = 0; i < M; ++i) {
         int take, cap_max = 0;
 
