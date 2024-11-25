@@ -14,10 +14,6 @@ int main() {
     getline(cin, dest);
 
     int cnt = 0;
-    if (src.size() < dest.size()) {
-        cout << 0;
-        return 0;
-    }
     size_t pos = src.find(dest);
     while (pos != string::npos) {
 //        cout << src.substr(pos, dest.size()) << '\n';
