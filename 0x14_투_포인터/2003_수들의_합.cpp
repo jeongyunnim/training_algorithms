@@ -17,10 +17,14 @@ int main() {
     }
 
     int cnt = 0, sum = 0, st = 0, en = 0;
+    /*
+     * arr의 요소가 항상 양수라는 조건 아래,
+     * en과 st의 관계가 항상 `st <= en`을 만족한다.
+     */
     while (st < N) {
-        if (sum < M && en < N) { // TODO: st가 en을 넘어가지 않는지 검증해야 한다.
+        if (sum < M && en < N) { // sum이 M보다 작고 en이 N 밤위 이내일 때 확장
             sum += arr[en++];
-        } else {
+        } else { // sum이 M 보다 큰 경우 st를 증가시켜 범위를 확장
             sum -= arr[st++];
         }
         if (sum == M) {
