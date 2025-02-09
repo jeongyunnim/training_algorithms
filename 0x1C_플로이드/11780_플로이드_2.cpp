@@ -33,7 +33,7 @@ int main() {
             for (int j = 1; j <= N; ++j) {
                 if (board[i][j] > board[i][k] + board[k][j]) {
                     board[i][j] = board[i][k] + board[k][j];
-                    trace[i][j] = trace[i][k];
+                    trace[i][j] = trace[i][k]; // 해당 경로로 가는 중간 경로를 넣어주어야 한다.
                 }
             }
         }
